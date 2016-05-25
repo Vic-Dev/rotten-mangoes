@@ -32,6 +32,15 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use Carrierwave for uploading images
+gem 'carrierwave'
+
+# Use Rmagick to resize_to_limit images
+gem 'rmagick'
+
+# Use Kaminari to paginate users table on admin/users/index.html.erb
+gem 'kaminari'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
