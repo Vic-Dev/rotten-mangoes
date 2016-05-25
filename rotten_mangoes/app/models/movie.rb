@@ -36,4 +36,12 @@ class Movie < ActiveRecord::Base
     end
   end
 
+  def self.search(search)
+    if search
+      all.where('title LIKE ?',  "%#{search}%")
+    else
+      all
+    end
+  end
+
 end
