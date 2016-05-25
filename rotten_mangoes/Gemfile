@@ -38,6 +38,9 @@ gem 'carrierwave'
 # Use Rmagick to resize_to_limit images
 gem 'rmagick'
 
+# Use Kaminari to paginate users table on admin/users/index.html.erb
+gem 'kaminari'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
