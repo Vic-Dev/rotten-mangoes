@@ -16,6 +16,16 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def masquerading?
+    session[:admin_id].present?
+  end
+
+  def authorize_admin
+    current_user.admin? || masquerading?
+  end
+
+  helper_method :masquerading?
+
   helper_method :current_user
 
 end

@@ -13,6 +13,7 @@
   <%= paginate @users %>
   <% @users.each do |user| %>
     <tr>
+      <td><%= link_to 'Masquerade', new_user_masquerade_path(user) %></td>
       <td><%= user.id %></td>
       <td><%= link_to user.email, admin_user_path(user) %></td>
       <td><%= user.firstname%></td>
