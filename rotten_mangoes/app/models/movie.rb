@@ -36,26 +36,7 @@ class Movie < ActiveRecord::Base
     end
   end
 
-  def self.search(search_title="%", search_director="%", duration="%")
-    # if search_title || search_director || duration
-    #   if search_title.length > 0
-    #     all.where('title LIKE ? AND director LIKE ?', "%#{search_title}%", "%#{search_director}%")
-    #   elsif search_title.length > 0
-    #     all.where('title LIKE ?',  "%#{search_title}%")
-    #   elsif search_director.length > 0
-    #     all.where('director LIKE ?', "%#{search_director}%")
-    #   elsif duration == '1'
-    #     all.where('runtime_in_minutes < ?', 90)
-    #   elsif duration == '2'
-    #     all.where('runtime_in_minutes BETWEEN ? AND ?', 90, 120)
-    #   elsif duration == '3'
-    #     all.where('runtime_in_minutes > ?', 120)
-    #   else
-    #     all
-    #   end
-    # else
-    #   all
-    # end
+  def self.search(search_title, search_director, duration)
     result = all.where('title LIKE ? AND director LIKE ?', "%#{search_title}%", "%#{search_director}%")
     if duration == '1'
       result = result.where('runtime_in_minutes < ?', 90)
